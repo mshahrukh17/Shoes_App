@@ -1,23 +1,17 @@
+// ignore_for_file: must_be_immutable
+
 import 'package:shoe_app/controller/ADMCategoryController.dart';
 
 import '../../export/AllExport.dart';
 
-class AdminCategories extends StatefulWidget {
-  const AdminCategories({super.key});
+class AdminCategories extends StatelessWidget {
+   AdminCategories({super.key});
 
-  @override
-  State<AdminCategories> createState() => _AdminCategoriesState();
-}
-
-class _AdminCategoriesState extends State<AdminCategories> {
   var admincatcontroller = Get.put(AdminCategoryCOntroller());
-  final TextEditingController textcatcontrol = TextEditingController();
-  @override
-  void initState() {
-    super.initState();
-    getcat();
-  }
 
+  final TextEditingController textcatcontrol = TextEditingController();
+
+  // @override
   getcat() async {
     await admincatcontroller.getcategories();
   }

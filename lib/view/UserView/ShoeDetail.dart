@@ -15,7 +15,6 @@ class _ShoeDetailsState extends State<ShoeDetails> {
   var cartcontroller = Get.put(CartController(), permanent: true);
   var wishlistcontroller = Get.put(WishListController(), permanent: true);
   String selectedSize = "9";
-  var removecart;
   // var selectedindex;
   // late Color selectedColor;
 
@@ -90,9 +89,21 @@ class _ShoeDetailsState extends State<ShoeDetails> {
                                           .isInFav(widget.shoe)) {
                                         wishlistcontroller
                                             .removeFromFav(widget.shoe);
+                                        ScaffoldMessenger.of(context)
+                                            .showSnackBar(SnackBar(
+                                          content: Text(
+                                              "${widget.shoe.name} Remove form Favourite's"),
+                                          duration: Duration(seconds: 1),
+                                        ));
                                       } else {
                                         wishlistcontroller
                                             .addToFav(widget.shoe);
+                                             ScaffoldMessenger.of(context)
+                                            .showSnackBar(SnackBar(
+                                          content: Text(
+                                              "${widget.shoe.name} Added in Favourite's"),
+                                          duration: Duration(seconds: 1),
+                                        ));
                                       }
                                     },
                                     icon: Icon(
@@ -200,7 +211,6 @@ class _ShoeDetailsState extends State<ShoeDetails> {
                       ),
                     ),
                   ),
-                  // Color selection and Buy button
                   Positioned(
                     left: 20.w,
                     bottom: 1.sh * 0.03,
@@ -221,21 +231,14 @@ class _ShoeDetailsState extends State<ShoeDetails> {
                                     color: Colors.white),
                               ),
                               SizedBox(height: 10),
-                              Row(
-                                children: [
-                                  GestureDetector(
-                                    onTap: () {},
-                                    child: Container(
-                                      height: 32,
-                                      width: 32,
-                                      decoration: BoxDecoration(
-                                          color: widget.shoe.color,
-                                          shape: BoxShape.circle,
-                                          border: Border.all(
-                                              width: 3, color: Colors.white)),
-                                    ),
-                                  )
-                                ],
+                              Container(
+                                height: 32,
+                                width: 32,
+                                decoration: BoxDecoration(
+                                    color: widget.shoe.color,
+                                    shape: BoxShape.circle,
+                                    border: Border.all(
+                                        width: 3, color: Colors.white)),
                               ),
                             ],
                           ),
@@ -249,7 +252,6 @@ class _ShoeDetailsState extends State<ShoeDetails> {
                                 size: selectedSize);
                             return MaterialButton(
                               onPressed: () {
-                                //  removecart = shoeWithSize;
                                 if (cartcontroller.isInCart(shoeWithSize)) {
                                   cartcontroller.removeFromCart(shoeWithSize);
                                   ScaffoldMessenger.of(context).showSnackBar(

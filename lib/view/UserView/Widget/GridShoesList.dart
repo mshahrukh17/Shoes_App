@@ -66,8 +66,8 @@ class GridShoesList extends StatelessWidget {
                           Positioned(
                             bottom: 0.h,
                             child: Container(
-                              height: 40.h,
-                              width: 40.w,
+                              height: 50.h,
+                              width: 50.w,
                               decoration: BoxDecoration(
                                   color: shoe.color,
                                   borderRadius: BorderRadius.only(
