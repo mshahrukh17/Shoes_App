@@ -59,9 +59,11 @@ class MyDrawer extends StatelessWidget {
               ),
             ),
             ListTile(
-              leading: Icon(
-                Icons.favorite_rounded,
-                color: Colors.white,
+              leading: IconButton(onPressed: (){},
+                icon: Icon(
+                  Icons.favorite_rounded,
+                  color: Colors.white,
+                ),
               ),
               title: Text(
                 "W I S H L I S T",

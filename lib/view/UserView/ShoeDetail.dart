@@ -48,7 +48,7 @@ class _ShoeDetailsState extends State<ShoeDetails> {
               Stack(
                 children: [
                   Positioned(
-                    top: 35.h,
+                    top: 50.h,
                     left: 20.w,
                     right: 20.w,
                     child: Row(
@@ -131,7 +131,7 @@ class _ShoeDetailsState extends State<ShoeDetails> {
                         child: Text(widget.shoe.brand,
                             maxLines: 1,
                             style:
-                                ThemeText.shoebrand(Colors.white24, 100.0.sp)),
+                                ThemeText.shoebrand(Colors.white38, 100.0.sp)),
                       ),
                     ),
                   ),

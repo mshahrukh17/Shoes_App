@@ -32,7 +32,7 @@ class GridShoesList extends StatelessWidget {
                     height: 1.sh * 0.4,
                     width: 1.sw * 0.44,
                     decoration: BoxDecoration(
-                        color: Colors.white,
+                        color: Colors.grey.shade200,
                         borderRadius: BorderRadius.circular(8)),
                     child: SizedBox(
                       height: 1.sh * 0.2,
@@ -60,7 +60,7 @@ class GridShoesList extends StatelessWidget {
                                   shoe.brand,
                                   maxLines: 1,
                                   style: ThemeText.shoebrand(
-                                      Colors.grey.shade300, 55.0.h),
+                                      Colors.grey.shade400, 55.0.h),
                                 ),
                               )),
                           Positioned(

@@ -1,4 +1,3 @@
-
 import 'export/AllExport.dart';
 
 Future<void> main() async {
@@ -16,7 +15,7 @@ class MyApp extends StatelessWidget {
     SystemChrome.setSystemUIOverlayStyle(
         SystemUiOverlayStyle(statusBarColor: Colors.transparent));
     return ScreenUtilInit(
-      designSize: Size(375, 812), // size (iPhone 11 size)
+      designSize: Size(375, 812),
       minTextAdapt: true,
       splitScreenMode: true,
       builder: (context, child) {

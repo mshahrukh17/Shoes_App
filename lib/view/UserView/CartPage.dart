@@ -13,7 +13,10 @@ class _CartPageState extends State<CartPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text("My Bag"),
+        centerTitle: true,
+        title: Text("My Bag",
+        style: ThemeText.title()
+        ),
       ),
       body: Obx(() {
         if (cartcontroller.cartitems.isEmpty) {
@@ -70,8 +73,15 @@ class _CartPageState extends State<CartPage> {
                     onDismissed: (direction) {
                       ScaffoldMessenger.of(context).showSnackBar(
                         SnackBar(
-                          content: Text("Swipe left to remove ${shoes.name}"),
+                          animation: CurvedAnimation(parent: kAlwaysCompleteAnimation, curve: Curves.bounceIn),
+                          content: Text("${shoes.name} Removed from cart",
+                          style: TextStyle(
+                            color: Colors.white,
+                            fontWeight: FontWeight.bold
+                          ),
+                          ),
                           duration: Duration(seconds: 1),
+                          backgroundColor: Colors.red,
                         ),
                       );
                       cartcontroller.removeFromCart(shoes);
@@ -101,6 +111,7 @@ class _CartPageState extends State<CartPage> {
                             maxLines: 1,
                           ),
                           Text("${shoes.price.toString()}K "),
+                          Text("Size ${shoes.size.toString()}"),
                         ],
                       ),
                       trailing: Container(

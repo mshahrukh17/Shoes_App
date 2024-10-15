@@ -12,7 +12,9 @@ class WishPage extends StatelessWidget {
 
     return Scaffold(
       appBar: AppBar(
-        title: Text("Wish List"),
+        title: Text("Wish List",
+         style: ThemeText.title()
+        ),
         centerTitle: true,
       ),
       body: Obx(() {

@@ -1,3 +1,5 @@
+import 'package:flutter/material.dart';
+
 import '../../../export/AllExport.dart';
 
 class HoriShoesList extends StatelessWidget {
@@ -7,7 +9,7 @@ class HoriShoesList extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       height: 1.sh * 0.46,
-      width: 1.sw * 0.865,
+      width: 1.sw * 0.84,
       // color: Colors.pink,
       child: ListView.builder(
         itemCount: shoes.length,
@@ -26,15 +28,15 @@ class HoriShoesList extends StatelessWidget {
                 child: Stack(
                   // fit: StackFit.expand,
                   children: [
-                    Material(
-                      elevation: 3,
-                      color: Colors.white,
-                      borderRadius: BorderRadius.circular(12),
+                    GestureDetector(
+                      onTap: () {
+                        Get.to(()=> ShoeDetails(shoe: shoe));
+                      },
                       child: Container(
                         height: 1.sh,
                         width: 1.sw * 0.55,
                         decoration: BoxDecoration(
-                            color: Colors.white,
+                            color: Colors.grey.shade200,
                             borderRadius: BorderRadius.circular(12)),
                         child: SizedBox(
                           height: 1.sh * 0.5,
@@ -42,7 +44,7 @@ class HoriShoesList extends StatelessWidget {
                           child: Stack(
                             children: [
                               Positioned(
-                                  right: -40.w,
+                                  left: 50.w,
                                   bottom: 1.h,
                                   top: 1.h,
                                   child: FadeAnimation(
@@ -64,7 +66,7 @@ class HoriShoesList extends StatelessWidget {
                                       shoe.brand,
                                       maxLines: 1,
                                       style: ThemeText.shoebrand(
-                                          Colors.grey.shade300, 55.0.h),
+                                          Colors.grey.shade400, 80.0.h),
                                     ),
                                   )),
                             ],

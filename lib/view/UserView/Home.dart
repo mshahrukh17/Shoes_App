@@ -25,7 +25,7 @@ class _HomePageState extends State<HomePage> {
           children: [
             Padding(
               padding: const EdgeInsets.only(
-                  top: 30, left: 15, right: 15, bottom: 5),
+                  top: 40, left: 15, right: 15, bottom: 5),
               child: Row(
                 children: [
                   Image.asset(
