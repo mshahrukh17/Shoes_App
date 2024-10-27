@@ -58,8 +58,12 @@ class _HomePageState extends State<HomePage> {
                     } else {
                       return Badge(
                         alignment: Alignment.topLeft,
-                        backgroundColor: Colors.white,
-                        label: Text(cartcontroller.cartitems.length.toString()),
+                        backgroundColor: Colors.red.shade400,
+                        label: Text(
+                          cartcontroller.cartitems.length.toString(),
+                          style: TextStyle(
+                              fontWeight: FontWeight.bold, color: Colors.white),
+                        ),
                         child: IconButton(
                             onPressed: () {
                               Get.toNamed(AppRoutes.CartPage);
@@ -72,6 +76,33 @@ class _HomePageState extends State<HomePage> {
                     }
                   })
                 ],
+              ),
+            ),
+            Padding(
+              padding: const EdgeInsets.only(
+                  top: 20, left: 25, right: 15, bottom: 5),
+              child: TextField(
+                cursorColor: Colors.black,
+                decoration: InputDecoration(
+                  prefixIcon: Icon(Icons.search, color: Colors.black,),
+                    border: InputBorder.none,
+                    hintText: "Search",hintStyle: TextStyle(
+                      color: Colors.black,
+                    ),
+                    filled: true,
+                    fillColor: Colors.grey.shade200,
+                    enabledBorder: OutlineInputBorder(
+                        borderRadius: BorderRadius.circular(40),
+                        borderSide: BorderSide(
+                          color: Colors.grey.shade200,
+                        )),
+                        focusedBorder: OutlineInputBorder(
+                           borderRadius: BorderRadius.circular(40),
+                        borderSide: BorderSide(
+                          color: Colors.grey.shade200,
+                        )
+                        )
+                        ),
               ),
             ),
             Expanded(
@@ -132,7 +163,7 @@ class _HomePageState extends State<HomePage> {
                         HoriShoesList()
                       ],
                     ),
-                    GridShoesList()
+                    GridShoesList(),
                   ],
                 ),
               ),

@@ -62,7 +62,7 @@ final List<ShoeModel> shoes = [
     name: "ZOOM",
     price: 115,
     image: "assets/images/nike4.png",
-    color: const Color(0xffE4E3E8),
+    color: const Color(0xffa5a4a4),
   ),
 ];
 
