@@ -73,7 +73,7 @@ class _CartPageState extends State<CartPage> {
                     onDismissed: (direction) {
                       ScaffoldMessenger.of(context).showSnackBar(
                         SnackBar(
-                          animation: CurvedAnimation(parent: kAlwaysCompleteAnimation, curve: Curves.bounceIn),
+                          animation: CurvedAnimation(parent: kAlwaysDismissedAnimation, curve: Curves.bounceIn),
                           content: Text("${shoes.name} Removed from cart",
                           style: TextStyle(
                             color: Colors.white,

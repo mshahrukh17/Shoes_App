@@ -1,4 +1,8 @@
 // ignore_for_file: deprecated_member_use
+import 'dart:ui';
+
+import 'package:flutter/material.dart';
+
 import '../../export/AllExport.dart';
 
 class HomePage extends StatefulWidget {
@@ -78,82 +82,68 @@ class _HomePageState extends State<HomePage> {
                 ],
               ),
             ),
-            Padding(
-              padding: const EdgeInsets.only(
-                  top: 20, left: 25, right: 15, bottom: 5),
-              child: TextField(
-                cursorColor: Colors.black,
-                decoration: InputDecoration(
-                  prefixIcon: Icon(Icons.search, color: Colors.black,),
-                    border: InputBorder.none,
-                    hintText: "Search",hintStyle: TextStyle(
-                      color: Colors.black,
-                    ),
-                    filled: true,
-                    fillColor: Colors.grey.shade200,
-                    enabledBorder: OutlineInputBorder(
-                        borderRadius: BorderRadius.circular(40),
-                        borderSide: BorderSide(
-                          color: Colors.grey.shade200,
-                        )),
-                        focusedBorder: OutlineInputBorder(
-                           borderRadius: BorderRadius.circular(40),
-                        borderSide: BorderSide(
-                          color: Colors.grey.shade200,
-                        )
-                        )
-                        ),
-              ),
-            ),
             Expanded(
               child: SingleChildScrollView(
                 child: Column(
+                  mainAxisAlignment: MainAxisAlignment.center,
                   children: [
+                    SizedBox(
+                      height: 20.h,
+                    ),
                     Row(
                       children: [
                         RotatedBox(
                           quarterTurns: -1,
                           child: Row(
                             children: [
-                              Container(
-                                height: 1.sh * 0.075,
-                                width: 1.sw * 0.85,
-                                // color: Colors.red,
-                                child: SingleChildScrollView(
-                                  scrollDirection: Axis.horizontal,
-                                  child: ListView.builder(
-                                    scrollDirection: Axis.horizontal,
-                                    shrinkWrap: true,
-                                    itemCount: brands.length,
-                                    itemBuilder: (context, index) {
-                                      return Padding(
-                                        padding: const EdgeInsets.only(
-                                          right: 20.0,
-                                        ),
-                                        child: Center(
-                                          child: GestureDetector(
-                                            onTap: () {
-                                              setState(() {
-                                                selectedbrand = brands[index];
-                                              });
-                                            },
-                                            child: Text(
-                                              brands[index].brand,
-                                              style: TextStyle(
-                                                  color: selectedbrand ==
-                                                          brands[index]
-                                                      ? Colors.white
-                                                      : Colors.grey.shade500,
-                                                  fontSize: selectedbrand ==
-                                                          brands[index]
-                                                      ? 24
-                                                      : 18,
-                                                  fontWeight: FontWeight.bold),
+                              ClipRRect(
+                                borderRadius: BorderRadius.circular(8),
+                                child: BackdropFilter(
+                                  filter: ImageFilter.blur(sigmaX: 20, sigmaY: 20),
+                                  child: Container(
+                                    height: 1.sh * 0.075,
+                                    width: 1.sw * 0.85,
+                                    decoration: BoxDecoration(
+                                      borderRadius: BorderRadius.circular(8),
+                                    color: Colors.grey.withOpacity(0.1),
+                                    ),
+                                    child: SingleChildScrollView(
+                                      scrollDirection: Axis.horizontal,
+                                      child: ListView.builder(
+                                        scrollDirection: Axis.horizontal,
+                                        shrinkWrap: true,
+                                        itemCount: brands.length,
+                                        itemBuilder: (context, index) {
+                                          return Padding(
+                                            padding: const EdgeInsets.symmetric(
+                                              horizontal: 20.0,
                                             ),
-                                          ),
-                                        ),
-                                      );
-                                    },
+                                            child: Center(
+                                              child: GestureDetector(
+                                                onTap: () {
+                                                  setState(() {
+                                                    selectedbrand = brands[index];
+                                                  });
+                                                },
+                                                child: Text(
+                                                  brands[index].brand,
+                                                  style: TextStyle(
+                                                      color: selectedbrand ==
+                                                              brands[index]
+                                                          ? Colors.white
+                                                          : Colors.grey.shade500,
+                                                      fontSize: selectedbrand ==
+                                                              brands[index]
+                                                          ? 24
+                                                          : 18,
+                                                      fontWeight: FontWeight.bold),
+                                                ),
+                                              ),
+                                            ),
+                                          );
+                                        },
+                                      ),
+                                    ),
                                   ),
                                 ),
                               ),

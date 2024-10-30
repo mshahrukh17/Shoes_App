@@ -1,3 +1,5 @@
+import 'package:carousel_slider/carousel_slider.dart';
+
 import '../../../export/AllExport.dart';
 
 class HoriShoesList extends StatelessWidget {
@@ -11,16 +13,23 @@ class HoriShoesList extends StatelessWidget {
           height: 1.sh * 0.46,
           width: 1.sw * 0.84,
           // color: Colors.pink,
-          child: ListView.builder(
+          child: CarouselSlider.builder(
+            options: CarouselOptions(
+              autoPlay: false,
+              aspectRatio: 10,
+              enableInfiniteScroll: true,
+              enlargeCenterPage: true,
+              viewportFraction: 0.8,
+              enlargeFactor: 0.4,
+              enlargeStrategy: CenterPageEnlargeStrategy.zoom
+            ),
             itemCount: shoes.length,
-            physics: const BouncingScrollPhysics(),
-            scrollDirection: Axis.horizontal,
-            itemBuilder: (context, index) {
+            itemBuilder: (BuildContext context, index, pageview) {
               final ShoeModel shoe = shoes[index];
               return Padding(
                 padding: const EdgeInsets.symmetric(vertical: 10.0),
                 child: Container(
-                  height: 1.sh * 0.1,
+                  height: 1.sh * 0.5,
                   width: 1.sw * 0.7,
                   // color: Colors.blue,
                   child: Padding(

@@ -20,6 +20,7 @@ class GridShoesList extends StatelessWidget {
               crossAxisCount: 2,
               childAspectRatio: 0.7.h,
               mainAxisSpacing: 25.h,
+              crossAxisSpacing: 12.0.w
             ),
             itemBuilder: (context, index) {
               final ShoeModel shoe = joggers[index];
