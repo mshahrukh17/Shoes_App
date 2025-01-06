@@ -131,7 +131,7 @@ class _ShoeDetailsState extends State<ShoeDetails> {
                         child: Text(widget.shoe.brand,
                             maxLines: 1,
                             style:
-                                ThemeText.shoebrand(Colors.white38, 100.0.sp)),
+                                ThemeText.shoebrand(Colors.white, 100.0.sp)),
                       ),
                     ),
                   ),
@@ -168,7 +168,7 @@ class _ShoeDetailsState extends State<ShoeDetails> {
                             children: [
                               Text(
                                 widget.shoe.brand,
-                                style: ThemeText.title(),
+                                style: ThemeText.title(Colors.white),
                               ),
                               Text(
                                 widget.shoe.name,

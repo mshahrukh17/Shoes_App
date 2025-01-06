@@ -23,7 +23,7 @@ class MyDrawer extends StatelessWidget {
             ),
             Text(
               "Shahrukh",
-              style: ThemeText.title(),
+              style: ThemeText.title(Colors.white),
             ),
             Text(
               "email@gmail.com",

@@ -15,7 +15,7 @@ class _CartPageState extends State<CartPage> {
       appBar: AppBar(
         centerTitle: true,
         title: Text("My Bag",
-        style: ThemeText.title()
+        style: ThemeText.title(Colors.white)
         ),
       ),
       body: Obx(() {
@@ -30,7 +30,7 @@ class _CartPageState extends State<CartPage> {
                 ),
                 Text(
                   "No Shoes Added!",
-                  style: ThemeText.title(),
+                  style: ThemeText.title(Colors.white),
                 ),
                 Text(
                   "Once you have added, come back:)",

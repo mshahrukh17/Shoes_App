@@ -63,7 +63,7 @@ class AdminCategories extends StatelessWidget {
       appBar: AppBar(
         title: Text(
           "Categories",
-          style: ThemeText.title(),
+          style: ThemeText.title(Colors.white),
         ),
         centerTitle: true,
       ),

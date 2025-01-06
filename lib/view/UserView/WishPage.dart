@@ -13,7 +13,7 @@ class WishPage extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         title: Text("Wish List",
-         style: ThemeText.title()
+         style: ThemeText.title(Colors.white)
         ),
         centerTitle: true,
       ),
@@ -30,7 +30,7 @@ class WishPage extends StatelessWidget {
                 ),
                 Text(
                   "No Wishes!",
-                  style: ThemeText.title(),
+                  style: ThemeText.title(Colors.white),
                 ),
                 Text(
                   "Once you have added, come back:)",

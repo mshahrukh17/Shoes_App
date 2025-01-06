@@ -9,11 +9,11 @@ class ThemeText {
     );
   }
 
-  static TextStyle title() {
+  static TextStyle title(color) {
     return TextStyle(
       fontFamily: 'semibold',
       fontSize: 20,
-      // color: Colors.black,
+      color: color,
       fontWeight: FontWeight.bold
     );
   }

@@ -75,7 +75,7 @@ class HoriShoesList extends StatelessWidget {
                                           shoe.brand,
                                           maxLines: 1,
                                           style: ThemeText.shoebrand(
-                                              Colors.grey.shade400, 80.0.h),
+                                              Colors.white, 80.0.h),
                                         ),
                                       )),
                                 ],
@@ -141,7 +141,7 @@ class HoriShoesList extends StatelessWidget {
                                       },
                                       icon: Icon(
                                         Icons.shopping_cart,
-                                        color: Colors.white.withOpacity(1),
+                                        color: Colors.white,
                                       ))),
                             )),
                       ],

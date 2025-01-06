@@ -20,7 +20,7 @@ final List<ShoeModel> shoes = [
     name: "AIR-JORDAN LOW",
     price: 150,
     image: "assets/images/nike6.png",
-    color: const Color(0xffE2E3E5),
+    color: const Color(0xFFBDBDBE),
   ),
   ShoeModel(
     brand: "NIKE",
@@ -55,7 +55,7 @@ final List<ShoeModel> shoes = [
     name: "Air-FORCE",
     price: 110,
     image: "assets/images/nike3.png",
-    color:  Colors.black,
+    color: const Color(0xFF000000),
   ),
   ShoeModel(
     brand: "NIKE",
